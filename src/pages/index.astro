@@ -1,6 +1,13 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
-const posts = await Astro.glob("./blog/*.md");
+let posts = await getCollection("posts");
+
+posts = posts
+  .sort(
+    (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
+  )
+  .slice(0, 3);
 ---
 
 <Layout>
@@ -10,11 +17,16 @@ const posts = await Astro.glob("./blog/*.md");
     {
       posts.map((post) => (
         <li>
-          <a class="underline" href={post.url}>
-            {post.frontmatter.title}
+          <a class="underline" href={`/blog/${post.slug}`}>
+            {post.data.title}
           </a>
+          <span>({post.data.date.toLocaleDateString()})</span>
         </li>
       ))
     }
   </ul>
+
+  <p class="py-4">
+    <a class="underline" href={"/blog/page/1"}>See all posts ▶︎</a>
+  </p>
 </Layout>
