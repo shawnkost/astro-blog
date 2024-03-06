@@ -1,6 +1,7 @@
 ---
 import "../styles.css";
 import { ViewTransitions } from "astro:transitions";
+import Navbar from "@components/Navbar.astro";
 const { frontmatter, title } = Astro.props;
 ---
 
@@ -40,12 +41,11 @@ const { frontmatter, title } = Astro.props;
     {frontmatter?.title && <h1>{frontmatter.title}</h1>}
     <slot />
   </body> -->
-  <body
-    class="bg-zinc-950 text-zinc-100 antialiased selection:bg-zinc-300 selection:text-zinc-900"
-  >
+  <body class="bg-secondary text-zinc-50 antialiased">
     <div
-      class="min-h-screen bg-gradient-to-tl from-zinc-950 via-zinc-700/10 to-zinc-950/80 pb-4"
+      class="from-secondary min-h-screen bg-gradient-to-br via-zinc-700/10 to-zinc-950/80 pb-4"
     >
+      <Navbar />
       <slot />
     </div>
   </body>

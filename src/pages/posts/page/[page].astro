@@ -27,7 +27,7 @@ const { page }: { page: Page } = Astro.props;
     {
       page.data.map((post) => (
         <li>
-          <a class="underline" href={`/blog/${post.slug}`}>
+          <a class="underline" href={`/posts/${post.slug}`}>
             {post.data.title}
           </a>
           <span>({post.data.date.toLocaleDateString()})</span>
