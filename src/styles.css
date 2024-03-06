@@ -2,7 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Nohemi-Regular";
+  src: url("/fonts/Nohemi-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Nohemi-SemiBold";
+  src: url("/fonts/Nohemi-SemiBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Nohemi-Bold";
+  src: url("/fonts/Nohemi-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+body {
+  font-family: "Nohemi-Regular", sans-serif;
+  font-size: 1.2rem;
+}
+
 h1 {
+  font-family: "Nohemi-Bold", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nohemi-SemiBold", sans-serif;
+  font-weight: 600;
 }

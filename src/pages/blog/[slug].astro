@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
+import Main from "../../components/Main.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -15,17 +16,24 @@ const { Content } = await post.render();
 ---
 
 <Layout frontmatter={post.data} title={post.data.title}>
-  <div class="my-4 space-x-2">
-    {
-      post.data.tags.map((tag) => (
-        <a
-          href={`/tag/${tag}`}
-          class="rounded-lg border border-black px-2 py-1"
-        >
-          {tag}
-        </a>
-      ))
-    }
-  </div>
-  <Content />
+  <Main>
+    <div class="my-4 space-x-2">
+      {
+        post.data.tags.map((tag) => (
+          <a
+            href={`/tag/${tag}`}
+            class="rounded-lg border border-black px-2 py-1"
+          >
+            {tag}
+          </a>
+        ))
+      }
+    </div>
+    <div class="mb-12">
+      <h1 class="text-3xl font-bold">{post.data.title}</h1>
+    </div>
+    <div class="prose prose-invert">
+      <Content />
+    </div>
+  </Main>
 </Layout>
