@@ -17,20 +17,8 @@ const { Content } = await post.render();
 
 <Layout frontmatter={post.data} title={post.data.title}>
   <Main>
-    <div class="my-4 space-x-2">
-      {
-        post.data.tags.map((tag) => (
-          <a
-            href={`/tag/${tag}`}
-            class="rounded-lg border border-black px-2 py-1"
-          >
-            {tag}
-          </a>
-        ))
-      }
-    </div>
     <div class="mb-12">
-      <h1 class="text-3xl font-bold">{post.data.title}</h1>
+      <h1 class="text-3xl font-bold text-primary">{post.data.title}</h1>
     </div>
     <div class="prose prose-invert text-zinc-50">
       <Content />

@@ -1,0 +1,11 @@
+---
+interface Props {
+  ariaHidden?: boolean;
+}
+
+const { ariaHidden = true } = Astro.props;
+---
+
+<div class="mx-auto max-w-2xl">
+  <hr class="border-primary" aria-hidden={ariaHidden} />
+</div>
