@@ -1,0 +1,33 @@
+---
+import Hr from "@components/Hr.astro";
+---
+
+<footer>
+  <Hr />
+  <div
+    class="test mx-auto flex max-w-2xl items-center justify-between pb-4 pt-8 max-sm:px-6"
+  >
+    <a href="/">
+      <p>Copyright &copy; 2024 | All rights reserved.</p>
+    </a>
+    <div class="flex items-center gap-4 text-sm">
+      <a
+        href="/posts/page/1"
+        class="hover:text-primary transition-colors duration-300">Posts</a
+      >
+      <a href="/tag" class="hover:text-primary transition-colors duration-300"
+        >Tags</a
+      >
+      <a
+        href="https://shawnkost.dev"
+        class="hover:text-primary transition-colors duration-300">Portfolio</a
+      >
+    </div>
+  </div>
+</footer>
+
+<style>
+  .test {
+    @apply mx-auto flex;
+  }
+</style>

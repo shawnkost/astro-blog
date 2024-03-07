@@ -1,7 +1,7 @@
 ---
 title: "Daily Stand Up"
 date: 2024-03-05
-description: "We discuss this very important topic."
+description: "How to properly conduct a daily stand up meeting."
 tags:
   - misc
 ---

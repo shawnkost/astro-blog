@@ -47,31 +47,18 @@ posts = posts
                   {post.data.title}
                 </h3>
               </a>
-              <p class="text-sm">
+              <p class="text-sm italic">
                 Updated: {post.data.date.toLocaleDateString()}
               </p>
+              <p class="my-2">{post.data.description}</p>
             </li>
           ))
         }
       </ul>
     </section>
 
-    <p class="py-4">
-      <a class="underline" href={"/posts/page/1"}>See all posts ▶︎</a>
-    </p>
-
-    <p class="my-4">Explore by tag:</p>
-    <div class="my-4 space-x-2">
-      {
-        tags.map((tag) => (
-          <a
-            href={`/tag/${tag}`}
-            class="rounded-lg border border-black px-2 py-1"
-          >
-            {tag}
-          </a>
-        ))
-      }
+    <div class="text-center">
+      <a href={"/posts/page/1"}>All Posts ▶</a>
     </div>
   </Main>
 </Layout>

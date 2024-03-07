@@ -2,6 +2,7 @@
 import "../styles.css";
 import { ViewTransitions } from "astro:transitions";
 import Navbar from "@components/Navbar.astro";
+import Footer from "@components/Footer.astro";
 const { frontmatter, title } = Astro.props;
 ---
 
@@ -45,6 +46,7 @@ const { frontmatter, title } = Astro.props;
     <div class="min-h-screen pb-4">
       <Navbar />
       <slot />
+      <Footer />
     </div>
   </body>
 </html>
